@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stringing and Warping: A Practical Troubleshooting Guide | 3D PRINTING</title>
+<meta name="description" content="Two failure modes cause most ugly prints, and each has a surprisingly short culprit list. Match the symptom, apply one fix, reprint. No ritual sacrifi">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/genesis.css">
+<script src="../../assets/genesis.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-309B3GG9D5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-309B3GG9D5');
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../../"><span class="brand-mark">3D&nbsp;</span><span class="brand-accent">PRINTING</span></a>
+      <nav class="nav" aria-label="Main">
+        <div class="mega">
+          <button class="nav-link" type="button" aria-expanded="false">Themes <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="mega-panel"><a class="mega-item" href="../../christmas/"><span class="mega-ico">XMAS</span><b>Christmas & Winter</b><span>17 models</span></a><a class="mega-item" href="../../halloween/"><span class="mega-ico">HWEN</span><b>Halloween & Spooky</b><span>22 models</span></a><a class="mega-item" href="../../easter/"><span class="mega-ico">EAST</span><b>Easter & Spring</b><span>15 models</span></a><a class="mega-item" href="../../valentine/"><span class="mega-ico">VAL</span><b>Valentine's & Wedding</b><span>9 models</span></a><a class="mega-item" href="../../dragons-fantasy/"><span class="mega-ico">DRGN</span><b>Dragons & Fantasy</b><span>18 models</span></a><a class="mega-item" href="../../flexi-toys/"><span class="mega-ico">FLXI</span><b>Flexi Toys & Learning</b><span>17 models</span></a><a class="mega-item" href="../../lamps-lights/"><span class="mega-ico">LAMP</span><b>Lamps & Night Lights</b><span>10 models</span></a><a class="mega-item" href="../../organizers/"><span class="mega-ico">ORG</span><b>Desk & Home Organizers</b><span>23 models</span></a><a class="mega-item" href="../../keychains-accessories/"><span class="mega-ico">KEY</span><b>Keychains & Craft Tools</b><span>28 models</span></a><a class="mega-item" href="../../decor-planters/"><span class="mega-ico">DECO</span><b>Decor, Planters & Figurines</b><span>22 models</span></a><a class="mega-item" href="../../gothic-dark/"><span class="mega-ico">GOTH</span><b>Gothic & Dark Aesthetic</b><span>8 models</span></a><a class="mega-item" href="../../kawaii-cute/"><span class="mega-ico">KAWA</span><b>Kawaii & Cute</b><span>9 models</span></a></div>
+        </div>
+        <a class="nav-link" href="../../blog/">Blog</a>
+        <div class="nav-actions"><a class="btn btn--secondary btn--sm" href="../../#themes">Browse</a></div>
+        <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+          <span>Menu</span>
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.33 16V0h1.34v16H7.33z"/><path d="M0 7.33V8.67h16V7.33H0z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="drawer" id="mobileNav" aria-hidden="true">
+    <div class="drawer-overlay" data-mnav-close></div>
+    <div class="drawer-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <a class="brand" href="../../"><span class="brand-mark">3D&nbsp;</span><span class="brand-accent">PRINTING</span></a>
+        <button class="drawer-close" data-mnav-close aria-label="Close"><svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+      </div>
+      <ul class="drawer-list">
+        <li><a href="../../">Home <span class="cnt">START</span></a></li>
+        <li><a href="../../blog/">Blog <span class="cnt">GUIDES</span></a></li>
+        <li class="drawer-sep" aria-hidden="true"></li>
+        <li><a href="../../christmas/">Christmas & Winter <span class="cnt">17</span></a></li><li><a href="../../halloween/">Halloween & Spooky <span class="cnt">22</span></a></li><li><a href="../../easter/">Easter & Spring <span class="cnt">15</span></a></li><li><a href="../../valentine/">Valentine's & Wedding <span class="cnt">9</span></a></li><li><a href="../../dragons-fantasy/">Dragons & Fantasy <span class="cnt">18</span></a></li><li><a href="../../flexi-toys/">Flexi Toys & Learning <span class="cnt">17</span></a></li><li><a href="../../lamps-lights/">Lamps & Night Lights <span class="cnt">10</span></a></li><li><a href="../../organizers/">Desk & Home Organizers <span class="cnt">23</span></a></li><li><a href="../../keychains-accessories/">Keychains & Craft Tools <span class="cnt">28</span></a></li><li><a href="../../decor-planters/">Decor, Planters & Figurines <span class="cnt">22</span></a></li><li><a href="../../gothic-dark/">Gothic & Dark Aesthetic <span class="cnt">8</span></a></li><li><a href="../../kawaii-cute/">Kawaii & Cute <span class="cnt">9</span></a></li>
+      </ul>
+    </div>
+  </div>
+<main>
+  <section class="section">
+    <div class="wrap">
+      <article class="article">
+        <a class="a-back" href="../">← All guides</a>
+        <span class="overline">Guide</span>
+        <h1>Stringing and Warping: A Practical Troubleshooting Guide</h1>
+        <div class="a-meta"><span>2026-09-04</span><span>6 min read</span></div>
+        <a class="banner-bleed" href="https://rzekl.com/g/1e8d11449451da3d44eb16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-3D-Printer.html" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="Shop 3D printers on AliExpress">
+  <img src="../../assets/3DPrinterBanner_Indigo1OOO.webp" alt="3D printers" loading="lazy">
+  <span class="banner-overlay"></span>
+  <div class="banner-content">
+    <div class="banner-top">
+      <div>
+        <div class="banner-title">3D Printers</div>
+        <div class="banner-sub">Filaments &amp; accessories too</div>
+      </div>
+      <span class="banner-tag">AD</span>
+    </div>
+    <div class="banner-bottom">
+      <span class="banner-pill">Buy a printer here &#8594;</span>
+      <div class="banner-dots"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</a>
+        <div class="a-body">
+          
+          
+          
+          
+          
+          
+          
+
+      <p>Two failure modes cause most ugly prints, and each has a surprisingly short culprit list. Match the symptom, apply one fix, reprint. No ritual sacrifices required.</p>
+      <h2>Stringing: the hairy print</h2>
+      <p>Fine plastic threads between separate parts of the model mean the nozzle is leaking while traveling. Fixes, in order:</p>
+      <ul>
+        <li><b>Dry the filament.</b> Damp plastic bubbles and oozes — this one cause explains half of all stringing. See <a href="../how-to-store-filament/">the storage guide</a>.</li>
+        <li><b>Retraction distance and speed.</b> Increase distance in 0.1&nbsp;mm steps (direct drive) or 0.5&nbsp;mm steps (bowden) until the hairs thin out.</li>
+        <li><b>Temperature down 5°C.</b> Cooler melt oozes less. Stop when corners start rounding.</li>
+      </ul>
+      <h2>Warping: the curling corner</h2>
+      <p>Corners lifting off the bed mean the part is shrinking faster than it is sticking. Fixes:</p>
+      <ul>
+        <li><b>Kill the draft.</b> A window two meters away is enough. Enclosures solve this completely for ABS/ASA.</li>
+        <li><b>Brim, not raft.</b> A 5&nbsp;mm brim anchors edges; a raft hides the problem and adds cleanup.</li>
+        <li><b>Bed temperature up 5°C</b> for the stubborn cases, and clean the plate — grease releases parts as efficiently as heat does.</li>
+      </ul>
+      <div class="a-callout"><b>One change per print.</b> Stringing and warping both respond within a single reprint when you change the right thing — and become mysteries when you change three things at once.</div>
+      <p>Where these bites are common: tall <a href="../../christmas/">tree and light-stand silhouettes</a> (warping), and detail-heavy <a href="../../gothic-dark/">gothic pieces</a> (stringing shows up first on fine ornaments).</p>
+      
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        
+          <div class="a-callout"><b>The one rule:</b> print something you will actually keep every single day. Motivation does not come from calibration cubes.</div>
+        </div>
+        <div class="a-nav">
+          <a href="../slicer-settings-that-matter/">← ←</a>
+          <a href="../3d-printing-software-explained/">3D Printing Software, Explained →</a>
+        </div>
+        
+      <section class="related-themes">
+        <h2>Put it into practice</h2>
+        <div class="rt-grid"><a class="rt-card" href="../../organizers/"><b>Desk &amp; Home Organizers</b><span>23 models</span></a><a class="rt-card" href="../../christmas/"><b>Christmas &amp; Winter</b><span>17 models</span></a><a class="rt-card" href="../../gothic-dark/"><b>Gothic &amp; Dark Aesthetic</b><span>8 models</span></a></div>
+      </section>
+      </article>
+    </div>
+  </section>
+<a class="banner-bleed" href="https://rzekl.com/g/1e8d11449451da3d44eb16525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fw%2Fwholesale-3D-Printer.html" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="Shop 3D printers on AliExpress">
+  <img src="../../assets/3DPrinterBanner_Indigo3OOO.webp" alt="3D printers" loading="lazy">
+  <span class="banner-overlay"></span>
+  <div class="banner-content">
+    <div class="banner-top">
+      <div>
+        <div class="banner-title">3D Printers</div>
+        <div class="banner-sub">Filaments &amp; accessories too</div>
+      </div>
+      <span class="banner-tag">AD</span>
+    </div>
+    <div class="banner-bottom">
+      <span class="banner-pill">Buy a printer here &#8594;</span>
+      <div class="banner-dots"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</a></main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">3D<span>PRINTING</span></div>
+          <p>A curated index of 198 printable 3D models across the seasons and the home. Pick a theme, find a model, and start printing.</p>
+        </div>
+        <div class="footer-col"><h4>Seasons</h4><a href="../../christmas/">Christmas & Winter</a><a href="../../halloween/">Halloween & Spooky</a><a href="../../easter/">Easter & Spring</a><a href="../../valentine/">Valentine's & Wedding</a></div>
+        <div class="footer-col"><h4>Collections</h4><a href="../../dragons-fantasy/">Dragons & Fantasy</a><a href="../../flexi-toys/">Flexi Toys</a><a href="../../lamps-lights/">Lamps & Lights</a><a href="../../decor-planters/">Decor & Planters</a></div>
+        <div class="footer-col"><h4>For the desk</h4><a href="../../organizers/">Organizers</a><a href="../../keychains-accessories/">Keychains</a><a href="../../gothic-dark/">Gothic & Dark</a><a href="../../kawaii-cute/">Kawaii & Cute</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 3D PRINTING — an index, not a store. Every link goes to the model's own page.</span>
+        <span><a href="../../privacy/">Privacy</a> &middot; <a href="../../terms/">Terms</a> &middot; <a href="../../blog/">Blog</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
